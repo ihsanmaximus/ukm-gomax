@@ -1,0 +1,86 @@
+/* CLOSING PROFILE */
+.closing-profile {
+  background: #fff;
+  padding: 56px 0 0;
+  overflow: hidden;
+}
+
+.closing-profile-image {
+  display: block;
+  width: min(100%, 560px);
+  max-height: 470px;
+  object-fit: contain;
+  object-position: center bottom;
+  margin: auto;
+}
+
+/* CTA CARD */
+.closing {
+  padding: 54px 0 64px;
+  background: #f4f7f5;
+}
+
+.closing-card {
+  max-width: 760px;
+  margin: auto;
+  padding: 54px 48px;
+  border-radius: 28px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(120deg, #0b4656, #12604d);
+  box-shadow: 0 18px 48px rgba(9,35,57,.13);
+}
+
+.closing-card .kicker {
+  color: #d9e9a7;
+}
+
+.closing-card h2 {
+  margin: 0;
+  color: #fff;
+  font: 800 clamp(30px, 4.5vw, 44px)/1.12 Manrope, sans-serif;
+}
+
+.closing-description {
+  max-width: 520px;
+  margin: 18px auto 26px;
+  color: #d2e0e5;
+  font-size: 16px;
+}
+
+.closing-card .btn {
+  min-width: 230px;
+}
+
+@media (max-width: 680px) {
+  .closing-profile {
+    padding-top: 34px;
+  }
+
+  .closing-profile-image {
+    width: 100%;
+    max-height: 360px;
+  }
+
+  .closing {
+    padding: 34px 0 46px;
+  }
+
+  .closing-card {
+    padding: 38px 24px;
+    border-radius: 24px;
+  }
+
+  .closing-card h2 {
+    font-size: 31px;
+  }
+
+  .closing-description {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .closing-card .btn {
+    width: 100%;
+  }
+}

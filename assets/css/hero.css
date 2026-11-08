@@ -1,50 +1,563 @@
-.hero{height:600px;position:relative;overflow:hidden;background:#064653;color:#fff;display:flex;align-items:center}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,57,70,.04),transparent 56%);pointer-events:none}.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:48% 52%;align-items:center;height:100%}.hero-copy{max-width:560px;padding:25px 0;position:relative;z-index:2}.hero .kicker{color:#bde9a9}.hero h1{font:800 clamp(46px,6.2vw,76px)/.99 Manrope;letter-spacing:-.065em;margin:0 0 20px}.hero h1 span{color:#bfe99e}.hero-sub{font-size:18px;line-height:1.55;color:#e0eeee;max-width:460px;margin:0}.hero-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:30px}.hero-proof{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;color:#c6d8e3;font-size:11px}.hero-proof span:before{content:"✓";color:#bfe99e;font-weight:900;margin-right:7px}.hero-visual{height:100%;min-width:0;display:flex;align-items:flex-end;justify-content:flex-end;overflow:visible}.hero-visual img{width:auto;height:100%;max-width:none;object-fit:contain;object-position:right bottom;opacity:1}@media(max-width:900px){.hero-inner{grid-template-columns:46% 54%}.hero h1{font-size:clamp(42px,6vw,64px)}}@media(max-width:680px){.hero{height:560px;min-height:560px;align-items:flex-start}.hero-inner{display:block;padding-top:52px}.hero-copy{max-width:100%;padding:0}.hero h1{font-size:clamp(42px,11vw,58px);margin-bottom:14px}.hero-sub{font-size:14px;max-width:390px}.hero-actions{gap:9px;margin-top:18px}.hero-actions .btn{padding:12px 15px;font-size:11px}.hero-proof{font-size:9px;gap:10px;margin-top:14px}.hero-visual{position:absolute;right:0;bottom:0;width:100%;height:250px;z-index:1;pointer-events:none}.hero-visual img{height:100%;width:auto;max-width:none;object-fit:contain;object-position:right bottom}}
+/* ==================================================
+   MAXIMUS — HERO MODULE
+   Project : UKM GoMax
+   Structure: Desktop / Tablet / Mobile
+================================================== */
 
 
-/* MAXIMUS DESKTOP OVERLAY PATCH — 38:62 */
-@media (min-width: 901px) {
-  .hero {
+/* ==================================================
+   01. DESKTOP — BASE
+================================================== */
+
+/* Hero Container */
+.hero {
+    height: 600px;
     position: relative;
     overflow: hidden;
     background: #064653;
-  }
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
 
-  .hero::before {
+/* Background Overlay */
+.hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    z-index: 2;
-    pointer-events: none;
     background: linear-gradient(
-      90deg,
-      rgb(6, 70, 83) 0%,
-      rgb(6, 70, 83) 30%,
-      rgba(6, 70, 83, .98) 38%,
-      rgba(6, 70, 83, .90) 48%,
-      rgba(6, 70, 83, .65) 56%,
-      rgba(6, 70, 83, .25) 62%,
-      rgba(6, 70, 83, .05) 72%,
-      transparent 82%
+        90deg,
+        rgba(3, 57, 70, .04),
+        transparent 56%
     );
-  }
+    pointer-events: none;
+}
 
-  /* 38:62 — keep the visual column wider */
-  .hero .hero-inner {
-    position: relative;
-    z-index: auto;
-    grid-template-columns: 38% 62%;
-  }
-
-  /* Image stays below the overlay */
-  .hero .hero-visual {
+/* Hero Layout */
+.hero-inner {
     position: relative;
     z-index: 1;
-    min-width: 0;
-  }
+    display: grid;
+    grid-template-columns: 38% 62%;
+    align-items: center;
+    height: 100%;
+}
 
-  /* Text stays above the overlay */
-  .hero .hero-copy {
+/* Hero Content */
+.hero-copy {
+    max-width: 560px;
+    padding: 25px 0;
     position: relative;
-    z-index: 3;
-  }
+    z-index: 2;
+}
+
+/* Eyebrow */
+.hero .kicker {
+    color: #bde9a9;
+}
+
+/* Heading */
+.hero h1 {
+    font-family: Manrope, sans-serif;
+    font-size: clamp(46px, 6.2vw, 76px);
+    font-weight: 800;
+    line-height: .99;
+    letter-spacing: -.065em;
+    margin: 0 0 20px;
+}
+
+.hero h1 span {
+    color: #bfe99e;
+}
+
+/* Description */
+.hero-sub {
+    max-width: 460px;
+    margin: 0;
+    color: #e0eeee;
+    font-size: 18px;
+    line-height: 1.55;
+}
+
+/* CTA */
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+/* Trust Indicators */
+.hero-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 28px;
+    color: #c6d8e3;
+    font-size: 11px;
+}
+
+.hero-proof span::before {
+    content: "✓";
+    color: #bfe99e;
+    font-weight: 900;
+    margin-right: 7px;
+}
+
+/* Hero Image */
+.hero-visual {
+    position: relative;
+    height: 100%;
+    min-width: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    overflow: visible;
+    z-index: 2;
+}
+
+.hero-visual img {
+    display: block;
+    height: 100%;
+    width: auto;
+    max-width: none;
+    object-fit: contain;
+    object-position: right bottom;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ==================================================
+   02. TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+    .hero-inner {
+        grid-template-columns: 46% 54%;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 6vw, 64px);
+    }
+
+    .hero-sub {
+        font-size: 16px;
+    }
+
+}
+
+
+/* ==================================================
+   03. MOBILE
+================================================== */
+
+@media (max-width: 680px) {
+
+    /* Container */
+    .hero {
+        height: auto;
+        min-height: 720px;
+        align-items: flex-start;
+    }
+
+    /* Layout */
+    .hero-inner {
+        display: block;
+        height: auto;
+        padding-top: 52px;
+        padding-bottom: 0px;
+    
+        position: static;
+    }
+
+    /* Content */
+    .hero-copy {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin-top: -520px;
+    }
+
+    /* Heading */
+    .hero h1 {
+        font-size: clamp(42px, 11vw, 58px);
+        letter-spacing: -.035em;
+        line-height: .99;
+        margin-bottom: 14px;
+    }
+
+    /* Description */
+    .hero-sub {
+        max-width: 390px;
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    /* CTA */
+    .hero-actions {
+        gap: 9px;
+        margin-top: 18px;
+    }
+
+    .hero-actions .btn {
+        padding: 12px 15px;
+        font-size: 11px;
+    }
+
+    /* Trust Indicators */
+    .hero-proof {
+        gap: 10px;
+        margin-top: 14px;
+        font-size: 9px;
+    }
+
+    /* Image */
+    .hero-visual {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 250px;
+        z-index: 1;
+        pointer-events: none;
+        display: flex;
+    }
+
+    .hero-visual img {
+        height: 100%;
+        width: auto;
+        max-width: none;
+        object-fit: contain;
+        object-position: right bottom;
+    }
+
+}
+
+
+/* ==================================================
+   END — HERO MODULE
+================================================== */
+
+
+/* ==================================================
+   MOBILE HERO IMAGE — GOMAX REFINEMENT
+================================================== */
+
+@media (max-width: 680px) {
+
+    .hero .hero-visual {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 440px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        overflow: hidden;
+        isolation: isolate;
+        z-index: 1;
+    }
+
+    /* Gambar diperbesar, tepi kanan tetap rata */
+    .hero .hero-visual img {
+        position: relative;
+        z-index: 1;
+        display: block;
+        height: 380px;
+        width: auto;
+        max-width: none;
+        object-fit: contain;
+        object-position: right bottom;
+        margin-left: auto;
+        transform: translateY(-100px) !important;;
+    }
+
+    /* Overlay menyatu dengan warna background Hero */
+    .hero .hero-visual::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        background: linear-gradient(
+            to bottom,
+            #064653 0%,
+            rgba(6, 70, 83, 0.90) 8%,
+            rgba(6, 70, 83, 0.55) 25%,
+            rgba(6, 70, 83, 0.12) 48%,
+            transparent 65%
+        );
+    }
+
+}
+
+/* ==========================================
+   DESKTOP HERO — MAXIMUS REFINEMENT
+   ========================================== */
+
+@media (min-width: 901px) {
+
+    .hero {
+        height: 600px;
+        min-height: 600px;
+        position: relative;
+        overflow: hidden;
+        background: #064653;
+    }
+
+    /* Overlay hijau dari kiri menuju tengah */
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background: linear-gradient(
+            90deg,
+            #064653 0%,
+            #064653 30%,
+            rgba(6, 70, 83, 0.96) 43%,
+            rgba(6, 70, 83, 0.82) 52%,
+            rgba(6, 70, 83, 0.35) 68%,
+            transparent 85%
+        );
+    }
+
+    /* Semua konten di atas overlay */
+    .hero .hero-inner {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        grid-template-columns: 38% 62%;
+        align-items: center;
+    }
+
+    /* Teks */
+    .hero .hero-copy {
+        position: relative;
+        z-index: 3;
+        max-width: 560px;
+    }
+
+    /* Area gambar */
+    .hero .hero-visual {
+        position: relative;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        overflow: hidden;
+        z-index: 2;
+    }
+
+    /* Gambar lebih pendek, rata kanan */
+    .hero .hero-visual img {
+        display: block;
+        height: 85%;
+        width: auto;
+        max-width: none;
+        object-fit: contain;
+        object-position: right bottom;
+        margin-left: auto;
+        transform: none;
+    }
+
+}
+
+
+/* ==========================================
+   DESKTOP HERO — COMPACT SIZE
+========================================== */
+
+@media (min-width: 901px) {
+
+    .hero {
+        height: 520px;
+        min-height: 520px;
+    }
+
+    .hero .hero-inner {
+        height: 520px;
+    }
+
+    .hero .hero h1 {
+        font-size: clamp(42px, 5.6vw, 68px);
+    }
+
+    .hero .hero-sub {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .hero .hero-actions {
+        margin-top: 24px;
+    }
+
+    .hero .hero-proof {
+        margin-top: 22px;
+    }
+
+    .hero .hero-visual img {
+        height: 85%;
+    }
+
+}
+
+
+/* RESTORE DESKTOP HERO — LAYOUT SEBELUM COMPACT */
+
+@media (min-width: 901px) {
+    .hero {
+        height: 600px !important;
+        min-height: 600px !important;
+        overflow: hidden;
+    }
+
+    .hero .hero-inner {
+        display: grid !important;
+        grid-template-columns: 48% 52% !important;
+        height: 600px !important;
+        align-items: center;
+    }
+
+    .hero .hero-copy {
+        position: relative;
+        z-index: 3;
+        width: min(560px, 48vw);
+        max-width: 560px;
+        padding-left: 20px;
+    }
+
+    .hero .hero-visual {
+        position: relative !important;
+        height: 100% !important;
+        width: 100%;
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: flex-end !important;
+        overflow: hidden;
+    }
+
+    .hero .hero-visual img {
+        height: 85% !important;
+        width: auto !important;
+        max-width: 100% !important;
+        object-fit: contain;
+        object-position: right bottom;
+        margin-left: auto;
+        transform: none !important;
+    }
+
+    .hero h1 {
+        font-size: clamp(46px, 6.2vw, 76px);
+    }
+
+    .hero .hero-sub {
+        font-size: 18px;
+    }
+}
+
+/* DESKTOP — BATASI AREA GAMBAR HERO */
+@media (min-width: 901px) {
+
+    .hero .hero-visual {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        min-width: 0 !important;
+        overflow: hidden !important;
+        justify-content: flex-end !important;
+        align-items: flex-end !important;
+    }
+
+    .hero .hero-visual img {
+        position: absolute !important;
+        right: 0 !important;
+        bottom: 0 !important;
+
+        height: 100% !important;
+        width: auto !important;
+        max-width: none !important;
+
+        object-fit: contain !important;
+        object-position: right bottom !important;
+
+        margin: 0 !important;
+        transform: none !important;
+    }
+
+}
+
+/* ==================================================
+   MAXIMUS — UKM GOMAX DESKTOP HERO OVERLAY FIX
+   Append this AFTER the existing hero.css rules.
+   Mobile rules are intentionally untouched.
+================================================== */
+
+@media (min-width: 901px) {
+
+    /* Restore the intended 38:62 composition.
+       This also gives the image column more room
+       so the subject's left elbow is not clipped. */
+    .hero .hero-inner {
+        display: grid !important;
+        grid-template-columns: 38% 62% !important;
+    }
+
+    /* Keep the visual column as the overlay's own
+       stacking context, instead of placing an overlay
+       above the entire hero (which can darken the text). */
+    .hero .hero-visual {
+        position: relative !important;
+        min-width: 0 !important;
+        width: calc(100% + 22px) !important;
+        margin-right: -22px !important;
+        height: 100% !important;
+        overflow: hidden !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: flex-end !important;
+        isolation: isolate;
+        z-index: 1 !important;
+    }
+
+    /* Image remains full-height and anchored right.
+       Do not scale or crop it further. */
+    .hero .hero-visual img {
+        position: absolute !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        display: block !important;
+        height: 100% !important;
+        width: auto !important;
+        max-width: none !important;
+        object-fit: contain !important;
+        object-position: right bottom !important;
+        margin: 0 !important;
+        transform: none !important;
+    }
+
+    /* Reference-style teal fade over the LEFT side
+       of the image only. Text remains unaffected. */
+    .hero .hero-visual::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        background: linear-gradient(
+            90deg,
+            rgba(6, 70, 83, 0.88) 0%,
+            rgba(6, 70, 83, 0.72) 16%,
+            rgba(6, 70, 83, 0.42) 34%,
+            rgba(6, 70, 83, 0.16) 49%,
+            rgba(6, 70, 83, 0.04) 61%,
+            transparent 70%
+        );
+    }
 }
