@@ -1,1 +1,0 @@
-Tempatkan gambar hero final bernama maximus-hero-ukm-01.png di folder ini. Gambar final belum dapat di-commit dari lampiran chat pada langkah ini.
